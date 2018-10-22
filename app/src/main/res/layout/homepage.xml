@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sound"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:id="@+id/mic"
+        android:layout_width="70dp"
+        android:layout_height="82dp"
+        android:background="@drawable/microphone"
+        android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/click"
+            android:layout_width="51dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="445dp"
+            android:rotation="-120"
+            app:srcCompat="@drawable/click" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/textview_hey_cassie_layout"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/ic_home_background"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="349dp">
+
+        <TextView
+            android:id="@+id/textview_hey_cassie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:elevation="4dp"
+            android:gravity="top|center_horizontal"
+            android:text="Hey Cassie"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    
+    <ProgressBar
+        android:id="@+id/loading_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true">
+
+    </LinearLayout>
+
+</RelativeLayout>
