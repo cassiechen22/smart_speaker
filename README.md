@@ -2,7 +2,7 @@ This project is a Smart Speaker App, which could be called by users then play so
 
 <h2> Screenshot </h2>
 
-![image](https://github.com/xinyuchen1124/smarter-speaker/raw/master/Screenshot.png)
+![image](https://github.com/xinyuchen1124/smart_speaker/blob/master/Screenshot.png?raw=true)
 </br>
 </br>
 <h2> How to use ? </h2>
