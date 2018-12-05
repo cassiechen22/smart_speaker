@@ -34,7 +34,12 @@ This project is a Smart Speaker App, which could be called by users then play so
 <h2> More information </h2>
 
 [Hey Cassie PPT](https://docs.google.com/presentation/d/1riGCDNjiZxdEsZAt1mvL3wmpYgyENol3XRAA_fWKHsM/edit?usp=sharing)
-
+</br>
+</br>
+<h2> Notice </h2>
+請務必確認 APIKey 裡的 key 已經填好，然後小心服用本code 。
+</br>
+</br>
 ## License
 Apache 2.0
 
