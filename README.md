@@ -38,8 +38,8 @@ This project is a Smart Speaker App, which could be called by users then play so
 </br>
 <h2> Notice </h2>
 請務必確認 APIKey 裡的 key 已經填好，然後小心服用本code 。
-</br>
-</br>
+
+
 ## License
 Apache 2.0
 
