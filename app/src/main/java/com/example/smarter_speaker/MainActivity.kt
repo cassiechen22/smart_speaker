@@ -24,11 +24,12 @@ open class MainActivity : AppCompatActivity() {
     private var olami: Olami? = null
 
     var token: String
-    val tts = TTS()
+    val tts : TTS
     var player: Player? = null
     var loadingView: ProgressBar? = null
 
     init {
+        tts = TTS(this)
         token = tts.getTTStoken().execute().get()
     }
 
@@ -49,6 +50,9 @@ open class MainActivity : AppCompatActivity() {
         val heykc = findViewById<TextView>(R.id.textview_hey_cassie)
         val fontStyle = ResourcesCompat.getFont(this, R.font.kalam)
         heykc.typeface = fontStyle
+        heykc.setOnClickListener {
+            startActivity(Intent(this, InfoActivity::class.java))
+        }
 
         // Permission of Record
         val permissionCheck = ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.RECORD_AUDIO)

@@ -65,7 +65,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="林俊傑學不會" />
+                    android:text="我想聽歌" />
 
             </LinearLayout>
 

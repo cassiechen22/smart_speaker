@@ -13,11 +13,12 @@ import java.security.MessageDigest
 class Olami(activity: Activity) {
 
     private var token: String
-    private val tts = TTS()
+    private var tts: TTS
     private var player: Player? = null
 
     init {
         player = Player(activity)
+        tts = TTS(activity)
         token = tts.getTTStoken().execute().get()
     }
 
@@ -49,7 +50,7 @@ class Olami(activity: Activity) {
     // process for Result and get ID List
     fun getTrackIds(url: String?): List<String>? {
         var idList: List<String>? = null
-        for(i in 0 until 5) {
+        for (i in 0 until 5) {
             idList = getOlamiResult(url)
             if (idList.isNotEmpty()) {
                 break
@@ -93,6 +94,7 @@ class Olami(activity: Activity) {
             } else {
                 return emptyList()
             }
+
         } catch (e: Exception) {
             return emptyList()
         }
@@ -100,6 +102,7 @@ class Olami(activity: Activity) {
 
 
     private fun noResult() {
+        Log.e("token", token)
         Log.e("Olami", "No result.")
         val none = "你說的我還不懂"
         tts.textToSpeechMp3(none)

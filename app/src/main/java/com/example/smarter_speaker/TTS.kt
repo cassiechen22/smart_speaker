@@ -1,16 +1,18 @@
 package com.example.smarter_speaker
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioTrack
 import android.os.AsyncTask
+import android.widget.Toast
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.android.core.Json
 import com.github.kittinunf.fuel.android.extension.responseJson
 import java.nio.charset.Charset
 
-class TTS {
+class TTS(val context: Context) {
     private var token: String
 
     init {
@@ -51,15 +53,19 @@ class TTS {
     fun textToSpeechMp3(text: String) {
         val audiobyte = GetTTSAudio().execute(text).get()
 
-        val audioTrack = AudioTrack(AudioManager.STREAM_MUSIC, 16000,
-                AudioFormat.CHANNEL_OUT_MONO,
-                AudioFormat.ENCODING_PCM_16BIT,
-                audiobyte.size,
-                AudioTrack.MODE_STREAM
-        )
+        if (audiobyte.isNotEmpty()) {
+            val audioTrack = AudioTrack(AudioManager.STREAM_MUSIC, 16000,
+                    AudioFormat.CHANNEL_OUT_MONO,
+                    AudioFormat.ENCODING_PCM_16BIT,
+                    audiobyte.size,
+                    AudioTrack.MODE_STREAM
+            )
 
-        audioTrack.write(audiobyte, 0, audiobyte.size)
-        audioTrack.play()
+            audioTrack.write(audiobyte, 0, audiobyte.size)
+            audioTrack.play()
+        } else {
+            Toast.makeText(context, "你說的我還不懂", Toast.LENGTH_SHORT).show()
+        }
 
 //        if (audioTrack == null) {
 //            Log.d(TAG, "Stopping")

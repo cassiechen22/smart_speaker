@@ -26,13 +26,14 @@ class RecognitionListenerImpl(val activity: Activity) : RecognitionListener {
 
     private var olami: Olami? = null
 
-    private val tts = TTS()
+    private var tts : TTS
 
     private var player: Player? = null
 
     init {
         player = Player(activity)
         olami = Olami(activity)
+        tts = TTS(activity)
     }
 
     interface RecognitionCallback {
